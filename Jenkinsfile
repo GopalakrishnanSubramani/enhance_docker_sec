@@ -1,6 +1,6 @@
 node{
      
     stage('SCM Checkout'){
-        git url: 'https://github.com/MithunTechnologiesDevOps/java-web-app-docker.git',branch: 'main'
+        git url: 'https://github.com/GopalakrishnanSubramani/enhance_docker_sec',branch: 'main'
     }
 }
