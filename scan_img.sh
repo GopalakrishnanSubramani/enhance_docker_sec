@@ -1,5 +1,5 @@
 echo "\n*************** Scanning the Images using trivy ***************\n"
 
-python3 ./enhance_docker_sec/app.py
+python3 ./app.py
 
 echo "\n*************** Done *********************\n"

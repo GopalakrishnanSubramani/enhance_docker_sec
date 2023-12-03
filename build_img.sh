@@ -2,11 +2,11 @@
 
 echo "\n*************** Building the Image 1 ***************\n"
 
-docker build -t krishgopal37/image_1 ./enhance_docker_sec/target_1/
+docker build -t krishgopal37/image_1 ./target_1/
 
 echo "\n*************** Building the Image 2 ***************\n"
 
-docker build -t krishgopal37/image_2 ./enhance_docker_sec/target_2/
+docker build -t krishgopal37/image_2 ./target_2/
 
 echo "\n*************** Done *********************\n"
 
