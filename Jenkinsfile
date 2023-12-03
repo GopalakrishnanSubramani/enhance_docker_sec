@@ -5,7 +5,8 @@ node{
     }
 
     stage('Image Build'){
-        sh './build_img.sh'
+         sh "chmod +x -R ${env.WORKSPACE}"     
+         sh './build_img.sh'
     }
 
     stage('Image Scan'){
