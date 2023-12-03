@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo "\n*************** Building the Image 1 ***************\n"
+echo "\n*************** Building the Image 1 **************ok*\n"
 
 docker build -t krishgopal37/image_1 ./target_1/
 
