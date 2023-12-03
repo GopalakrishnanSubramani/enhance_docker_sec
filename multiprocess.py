@@ -11,26 +11,25 @@ def io_bound(image_name):
     logging.info("Entering image scanning function")
 
 
-    try:    
-        with open(f'{image_name}.txt', 'w') as f:
+    try:            
+        pid = os.getpid()
+        threadName = current_thread().name
+        processName = current_process().name
+
+        print(f"{pid} * {processName} * {threadName} * {image_name} \
+            ---> Start Scanning...")
         
-            pid = os.getpid()
-            threadName = current_thread().name
-            processName = current_process().name
+        logging.info("Scanning Docker with trivy")
 
-            print(f"{pid} * {processName} * {threadName} * {image_name} \
-                ---> Start Scanning...")
+        # scan_image = "trivy -q image -f table {}".format(image_name)
+        # scan_result = subprocess.check_output(scan_image.split()).decode('utf-8')
+        result_file = image_name.split("/")[1]   
+        print(result_file,'****************')     
+        subprocess.run(f"trivy image {image_name}:latest --timeout 15m > {result_file}.txt", shell=True)
+
             
-            logging.info("Scanning Docker with trivy")
-
-            scan_image = "trivy -q image -f table {}".format(image_name)
-            scan_result = subprocess.check_output(scan_image.split()).decode('utf-8')
-
-            logging.info("creating the report")            
-            f.writelines(scan_result)
-            
-            print(f"{pid} * {processName} * {threadName} * {image_name}  \
-                ---> Finished Scanning...")
+        print(f"{pid} * {processName} * {threadName} * {image_name}  \
+            ---> Finished Scanning...")
 
     except Exception as e:
         CustomException(e,sys)
