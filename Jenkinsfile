@@ -6,7 +6,7 @@ node{
 
     stage('Image Build'){
          echo " ******************* "
-         sh who
+         who
          sh "chmod +x -R ${env.WORKSPACE}"     
          sh './build_img.sh'
     }
