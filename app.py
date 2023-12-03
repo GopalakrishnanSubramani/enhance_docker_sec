@@ -2,7 +2,7 @@ import time
 import multiprocess
 from threading import Thread
 from multiprocessing import Process
-from vars import docker_images
+from get_img import docker_images
 from exception import CustomException
 from logger import logging
 import sys
@@ -13,9 +13,9 @@ class Scanner:
 
     
     def __init__(self) -> None:
-        self.image_name1 = docker_images["image_name1"]
-        self.image_name2 = docker_images["image_name2"]
-        
+        self.image_name1 = docker_images["image_0"]
+        self.image_name2 = docker_images["image_1"]
+    
     
     def processing(self):
         logging.info("Entering the multithreading fucntion")
@@ -38,4 +38,6 @@ if __name__=="__main__":
     Scanner().processing()
 
     end = time.time()
+    
+    print('******************* Scannig Success ******************')
     print('Time taken in seconds -', end - start)
