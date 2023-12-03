@@ -1,11 +1,7 @@
 docker_images = {
-    "image_name1": "alpine:3.10",
-    "image_name2": "golang"
+    "image_name1": "krishgopal37/image_1",
+    "image_name2": "krishgopal37/image_2"
 }
-
 dirs = {
     'logging_path': "./"
 }
-
-if __name__ == "__main__":
-    print(dir["image_name2"])
