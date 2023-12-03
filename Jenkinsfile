@@ -11,4 +11,8 @@ node{
     stage('SCM Checkout'){
         sh './enhance_docker_sec/scan_img.sh'
     }
+     
+    stage('show sample output'){
+         cat image_1.txt    
+    }     
 }
