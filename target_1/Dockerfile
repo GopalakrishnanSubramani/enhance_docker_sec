@@ -1,3 +1,8 @@
-FROM tomcat:8.0.20-jre8
-# Dummy text to test 
-COPY sample.war /usr/local/tomcat/webapps/sample.war
+# syntax=docker/dockerfile:1
+
+FROM node:18-alpine
+WORKDIR /app
+COPY . .
+RUN yarn install --production
+CMD ["node", "src/index.js"]
+EXPOSE 3000
