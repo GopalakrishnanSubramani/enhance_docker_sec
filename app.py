@@ -39,5 +39,5 @@ if __name__=="__main__":
 
     end = time.time()
     
-    print('******************* Scannig Success ******************')
+    print('******************* Scannig Success ok******************')
     print('Time taken in seconds -', end - start)
