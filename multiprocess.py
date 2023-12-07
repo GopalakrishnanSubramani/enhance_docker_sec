@@ -25,7 +25,7 @@ def io_bound(image_name):
         # scan_result = subprocess.check_output(scan_image.split()).decode('utf-8')
         result_file = image_name.split("/")[1]   
         print(result_file,'****************')     
-        subprocess.run(f"trivy image --skip-db-update {image_name}:latest --timeout 30m > {result_file}.txt", shell=True)
+        subprocess.run(f"trivy image {image_name}:latest --timeout 30m > {result_file}.txt", shell=True)
 
             
         print(f"{pid} * {processName} * {threadName} * {image_name}  \
